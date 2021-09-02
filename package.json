@@ -26,6 +26,6 @@
     "materialize-css": "^1.0.0-alpha.3",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.9",
-    "mpath": "0.5.1"
+    "mpath": "0.8.4"
   }
 }
