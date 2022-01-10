@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kathy145/familyCookbookManager.git"
+    "url": "git+https://github.com/CodeMeKathy/familyCookbookManager.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kathy145/familyCookbookManager/issues"
+    "url": "https://github.com/CodeMeKathy/familyCookbookManager/issues"
   },
-  "homepage": "https://github.com/Kathy145/familyCookbookManager#readme",
+  "homepage": "https://github.com/CodeMeKathy/familyCookbookManager#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
