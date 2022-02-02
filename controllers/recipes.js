@@ -1,5 +1,6 @@
-const mongoose = require('../db/connection')
-const Recipe = mongoose.model('Recipe')
+// const mongoose = require('../db/connection')
+// const mongoose = require('mongoose')
+const Recipe = require('../db/models/recipe')
 const express = require('express')
 const router = express.Router()
 
@@ -8,10 +9,7 @@ const router = express.Router()
 // });
 
 router.get('/', (req, res) => {
-    Recipe.find({})
-    .then(recipes =>
-    res.json({ recipes: recipes })
-    )
+  Recipe.find({}).then(recipes => res.json({ recipes: recipes }))
 })
 
 // router.get('/recipes', (req, res) => {
@@ -19,22 +17,22 @@ router.get('/', (req, res) => {
 // });
 
 router.get('/:title', (req, res) => {
-    Recipe.findOne({ title: req.params.title })
-    .then(recipe => {
-    res.json({recipe: recipe })
-    })
+  Recipe.findOne({ title: req.params.title }).then(recipe => {
+    res.json({ recipe: recipe })
+  })
 })
 
 router.post('/', (req, res) => {
-    Recipe.create(req.body.recipe)
-    .then(recipe => {
-        // res.redirect(`/recipes/${recipe.title}`)
+  Recipe.create(req.body.recipe).then(recipe => {
+    // res.redirect(`/recipes/${recipe.title}`)
     res.json({ recipe: recipe })
-    })
+  })
 })
 
 router.put('/:title', (req, res) => {
-    Recipe.findOneAndUpdate({ title: req.params.title }, req.body.recipe, {new: true})
+  Recipe.findOneAndUpdate({ title: req.params.title }, req.body.recipe, {
+    new: true
+  })
     .then(recipe => {
       // res.redirect(`/recipes/${recipe.title}`)
       res.json({ recipe: recipe })
@@ -43,12 +41,10 @@ router.put('/:title', (req, res) => {
 })
 
 router.delete('/:title', (req, res) => {
-    Recipe.findOneAndRemove({ title: req.params.title })
-    .then(() => {
+  Recipe.findOneAndRemove({ title: req.params.title }).then(() => {
     // res.redirect('/recipes')
     res.json({ recipe: recipe })
-    })
+  })
 })
-
 
 module.exports = router
