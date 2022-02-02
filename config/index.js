@@ -4,7 +4,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const config = {
-  port: process.env.PORT || 3800,
+  port: process.env.PORT || 3000,
   databaseURL: process.env.DATABASE_URL
 }
 
