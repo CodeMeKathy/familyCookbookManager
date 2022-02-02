@@ -4,14 +4,15 @@ const config = require('./config')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-const RecipeController = require('./controllers/recipes')
+const RecipeController = require('./controllers/recipes-controller')
+const RecipeRoutes = require('./routes/recipes-routes')
 const methodOverride = require('method-override')
 
 const app = express()
 const connection = mongoose
   .connect(config.databaseURL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
     // useCreateIndex: true
   })
   .then(connection =>
@@ -29,7 +30,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({ extended: false }))
 app.use(methodOverride('_method'))
 
-app.use('/', RecipeController)
+// app.use('/', RecipeController)
+app.use('/', RecipeRoutes)
+
 let port = config.port
 app.listen(port, () => {
   console.log(`✅  It's aliiive on PORT: ${port}! Aww...yeah!🌟`)
