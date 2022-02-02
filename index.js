@@ -32,7 +32,7 @@ app.use(methodOverride('_method'))
 app.use('/', RecipeController)
 let port = config.port
 app.listen(port, () => {
-  console.log(`✅  It's aliiive on PORT: ${port} Aww...yeah!🌟`)
+  console.log(`✅  It's aliiive on PORT: ${port}! Aww...yeah!🌟`)
 })
 
 // const app = express()
